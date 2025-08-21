@@ -1,0 +1,14 @@
+﻿<nodes>
+  <!-- Linke Seite (tote Endpunkte) -->
+  <node id="L"  x="0"   y="0"   type="dead_end"/>
+  <node id="L2" x="0"   y="10"  type="dead_end"/>
+
+  <!-- Stationen (in einer Reihe) -->
+  <node id="S1" x="200" y="0"   type="rail_signal"/>
+  <node id="S2" x="600" y="0"   type="rail_signal"/>
+  <node id="S3" x="1000" y="0"  type="rail_signal"/>
+
+  <!-- Rechte Seite (tote Endpunkte) -->
+  <node id="R"  x="1200" y="0"  type="dead_end"/>
+  <node id="R2" x="1200" y="10" type="dead_end"/>
+</nodes>

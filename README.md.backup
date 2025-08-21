@@ -78,28 +78,21 @@ cd src
 python run.py
 ```
 
----
-
 **Beispiel-Ausgabe:**
 
-```
 Step 0: 1 Fahrzeuge aktiv: ['veh0']
 Step 1: 2 Fahrzeuge aktiv: ['veh0', 'veh1']
 ...
-```
 
-## Tests
-
-Tests ausführen:
-```bash
+Tests
 pytest tests
-```
 
----
+Nächste Schritte
 
-## Nächste Schritte
+Eigene Netzwerke erstellen (z. B. Engstellen-Szenarien)
 
-- **Eigene Netzwerke erstellen** (z. B. Engstellen-Szenarien)
-- **Reward-Shaping und Metriken** (Travel Time, Waiting Time, Durchsatz)
-- **Integration in DRL-Frameworks** (PPO/DQN)
-- **Vergleichbare Setup-Logik wie in Flatland** (Smoke → Dev → Stress Szenarien)
+Reward-Shaping und Metriken (Travel Time, Waiting Time, Durchsatz)
+
+Integration in DRL-Frameworks (PPO/DQN)
+
+Vergleichbare Setup-Logik wie in Flatland (Smoke → Dev → Stress Szenarien)

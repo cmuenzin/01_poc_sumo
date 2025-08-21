@@ -1,0 +1,64 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+*.log
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# --- SUMO generated files ---
+*.net.xml
+*.rou.xml
+*.trips.xml
+*.poly.xml
+*.edg.xml
+*.nod.xml
+*.con.xml
+*.typ.xml
+*.alt.xml
+*.add.xml
+*.sumo.cfg
+*.sumocfg
+*.fcd.xml
+*.emissions.xml
+*.dump.xml
+*.tripinfo.xml
+*.vehroute.xml
+*.stat.xml
+
+# --- Outputs / Logs ---
+*.out.xml
+*.out
+*.csv
+*.json
+*.txt
+
+# SUMO screenshots / GUI exports
+*.png
+*.svg
+
+# --- OS specific ---
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# --- IDE / Editor ---
+.vscode/
+.idea/
+*.iml
+*.swp
+*.swo
+
+# --- Experiments / artifacts ---
+experiments/
+runs/
+artifacts/

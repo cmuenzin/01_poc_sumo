@@ -1,13 +1,10 @@
 <configuration>
   <input>
-    <node-files value="net/rail.nodes.xml"/>
-    <edge-files value="net/rail.edges.xml"/>
-    <type-files value="net/rail.types.xml"/>
+    <node-files value="rail.nodes.xml"/>
+    <edge-files value="rail.edges.xml"/>
+    <type-files value="rail.types.xml"/>
   </input>
   <output>
-    <output-file value="net/rail.net.xml"/>
+    <output-file value="rail.net.xml"/>
   </output>
-  <processing>
-    <railway.topology.all-defaults value="true"/>
-  </processing>
 </configuration>

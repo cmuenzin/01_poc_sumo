@@ -1,0 +1,5 @@
+<routes>
+  <vType id="train" vClass="rail" length="100" accel="0.5" decel="0.8" maxSpeed="27.78"/>
+  <route id="r1" edges="L2_to_S1_B S1_to_L2_B"/>
+  <vehicle id="t1" type="train" route="r1" depart="0"/>
+</routes>

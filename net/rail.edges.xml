@@ -1,0 +1,25 @@
+﻿<edges>
+  <!-- Gleis A (y=0): links -> S1 -> S2 -> S3 -> rechts -->
+  <edge id="L_to_S1_A"  from="L"  to="S1" type="rail"/>
+  <edge id="S1_to_S2_A" from="S1" to="S2" type="rail"/>
+  <edge id="S2_to_S3_A" from="S2" to="S3" type="rail"/>
+  <edge id="S3_to_R_A"  from="S3" to="R"  type="rail"/>
+
+  <!-- Gegenrichtung Gleis A -->
+  <edge id="S1_to_L_A"  from="S1" to="L"  type="rail"/>
+  <edge id="S2_to_S1_A" from="S2" to="S1" type="rail"/>
+  <edge id="S3_to_S2_A" from="S3" to="S2" type="rail"/>
+  <edge id="R_to_S3_A"  from="R"  to="S3" type="rail"/>
+
+  <!-- Gleis B (y=10): links -> S1 -> S2 -> S3 -> rechts -->
+  <edge id="L2_to_S1_B"  from="L2" to="S1" type="rail"/>
+  <edge id="S1_to_S2_B"  from="S1" to="S2" type="rail"/>
+  <edge id="S2_to_S3_B"  from="S2" to="S3" type="rail"/>
+  <edge id="S3_to_R2_B"  from="S3" to="R2" type="rail"/>
+
+  <!-- Gegenrichtung Gleis B -->
+  <edge id="S1_to_L2_B"  from="S1" to="L2" type="rail"/>
+  <edge id="S2_to_S1_B"  from="S2" to="S1" type="rail"/>
+  <edge id="S3_to_S2_B"  from="S3" to="S2" type="rail"/>
+  <edge id="R2_to_S3_B"  from="R2" to="S3" type="rail"/>
+</edges>

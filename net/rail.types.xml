@@ -1,0 +1,4 @@
+﻿<types>
+  <!-- Einspurige Schienenkanten; nur Züge erlaubt -->
+  <type id="rail" numLanes="1" speed="27.78" priority="3" allow="rail" spreadType="center"/>
+</types>

@@ -1,29 +1,23 @@
-Vorschlag README.md
 # SUMO Proof of Concept (Bachelor Thesis)
 
 Dieses Repository enthält einen minimalen Proof of Concept (PoC) für die Nutzung von [SUMO – Simulation of Urban MObility](https://www.eclipse.org/sumo/) im Rahmen der Bachelorarbeit **Kapazitätsmanagement im regionalen Schienenverkehr**.
 
-Ziel: Eine lauffähige Beispielsimulation (kleines Grid-Netzwerk mit zufälligen Fahrzeugen) sowie ein Python-Skript zur Steuerung der Simulation über **TraCI**.
+**Ziel:** Eine lauffähige Beispielsimulation (kleines Grid-Netzwerk mit zufälligen Fahrzeugen) sowie ein Python-Skript zur Steuerung der Simulation über **TraCI**.
 
 ---
 
 ## Projektstruktur
 
+```
+├── src/
+│   └── run.py              # Python PoC mit TraCI
+├── tests/
+│   └── test_env.py         # Smoke-Tests (pytest)
+├── .gitignore              # Git ignore rules
+└── README.md               # Diese Datei
+```
 
-
-01_poc/
-├─ net/ # Netz- und Routen-Dateien (XML)
-│ ├─ simple.net.xml # generiertes Netz (2x2 Grid)
-│ ├─ simple.rou.xml # generierte Routen (via randomTrips.py)
-│ └─ simple.sumocfg # Simulation Config
-├─ src/
-│ └─ run.py # Python PoC mit TraCI
-├─ tests/
-│ └─ test_env.py # Smoke-Tests (pytest)
-├─ requirements.txt # Python Dependencies
-├─ .gitignore
-└─ README.md
-
+**Hinweis:** Netz- und Routen-Dateien (XML) werden zur Laufzeit generiert und sind in der `.gitignore` ausgeschlossen.
 
 ---
 
@@ -34,56 +28,78 @@ Ziel: Eine lauffähige Beispielsimulation (kleines Grid-Netzwerk mit zufälligen
 - SUMO (installiert via Wizard oder Paket)
 - Git
 
-### 2. Environment
+### 2. Environment Setup
 ```powershell
-cd 01_poc
+# Repository klonen und Virtual Environment erstellen
+git clone <repository-url>
+cd 01_poc_sumo
 python -m venv .venv
 .venv\Scripts\activate
-pip install -r requirements.txt
 
-3. Umgebungsvariablen
+# Dependencies installieren (falls requirements.txt vorhanden)
+pip install sumo pytest
+```
 
+### 3. Umgebungsvariablen
 In PowerShell (temporär):
-
+```powershell
 $env:SUMO_HOME = "C:\Program Files\Eclipse\Sumo"
 $env:Path = "$env:SUMO_HOME\bin;$env:Path"
+```
 
-4. Netz und Routen generieren
+### 4. Netz und Routen generieren
+```powershell
+# Verzeichnis für Netz-Dateien erstellen
+mkdir net
 cd net
+
+# Grid-Netzwerk generieren
 netgenerate --grid --grid.number=2 --output-file=simple.net.xml
+
+# Zufällige Routen generieren
 python "$env:SUMO_HOME\tools\randomTrips.py" -n simple.net.xml -o simple.rou.xml -e 300 --seed 42 --validate
+```
 
-5. Simulation starten
+### 5. Simulation starten
 
-GUI:
-
+**GUI Version:**
+```powershell
 sumo-gui -c simple.sumocfg
+```
 
-
-Headless:
-
+**Headless Version:**
+```powershell
 sumo -c simple.sumocfg
+```
 
-Python PoC mit TraCI
+**Python PoC mit TraCI:**
+```powershell
 cd src
 python run.py
+```
 
+---
 
-Ausgabe (Beispiel):
+**Beispiel-Ausgabe:**
 
+```
 Step 0: 1 Fahrzeuge aktiv: ['veh0']
 Step 1: 2 Fahrzeuge aktiv: ['veh0', 'veh1']
 ...
+```
 
-Tests
+## Tests
+
+Tests ausführen:
+```bash
 pytest tests
+```
 
-Nächste Schritte
+---
 
-Eigene Netzwerke erstellen (z. B. Engstellen-Szenarien)
+## Nächste Schritte
 
-Reward-Shaping und Metriken (Travel Time, Waiting Time, Durchsatz)
-
-Integration in DRL-Frameworks (PPO/DQN)
-
-Vergleichbare Setup-Logik wie in Flatland (Smoke → Dev → Stress Szenarien)
+- **Eigene Netzwerke erstellen** (z. B. Engstellen-Szenarien)
+- **Reward-Shaping und Metriken** (Travel Time, Waiting Time, Durchsatz)
+- **Integration in DRL-Frameworks** (PPO/DQN)
+- **Vergleichbare Setup-Logik wie in Flatland** (Smoke → Dev → Stress Szenarien)
